@@ -1,0 +1,32 @@
+{
+    "schemaVersion": 1,
+    "id": "holycube6",
+    "version": "0.0.1",
+    "name": "Holycube6",
+    "description": "Mod Officiel de la Saison 6 de Holycube (Marlicraft Modified)",
+    "authors": [
+        "Olivier \"ShoukaSeikyo\" Martinez"
+    ],
+    "license": "CC BY-NC-SA",
+    "icon": "assets/holycube6/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            {
+                "adapter": "kotlin",
+                "value": "net.orandja.holycube6.HolyCube6"
+            }
+        ]
+    },
+    "mixins": [
+        "holycube6.mixins.json",
+        "holycube6.ac.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.14.21",
+        "fabric-api": "*",
+        "fabric-language-kotlin": ">=1.8.22",
+        "minecraft": "~1.20.1",
+        "java": ">=17"
+    }
+}

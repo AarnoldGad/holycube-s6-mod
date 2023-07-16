@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "package": "net.orandja.holycube6.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "BatEntityMixin",
+    "DebugStickItemMixin",
+    "ItemFrameEntityMixin",
+    "KelpPlantBlockMixin",
+    "LightBlockMixin",
+    "SchoolingFishEntityMixin",
+    "ServerPlayerInteractionManagerMixin",
+    "ShapedRecipeSerializerMixin",
+    "ShapelessRecipeSerializerMixin",
+    "SmoothVillagerMixin",
+    "WanderingTraderEntityMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
