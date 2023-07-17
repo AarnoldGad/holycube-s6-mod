@@ -64,7 +64,7 @@ interface SmoothBrainVillager {
         val l = world.time
         brain.tasks.values.map { it.entries }.forEach { tasks ->
             tasks.filter {
-                (it.key === Activity.WORK || it.key === Activity.CORE) && realBrain.possibleActivities.contains(it.key)
+                (it.key === Activity.WORK || it.key === Activity.CORE) && realBrain.hasActivity(it.key)
             }.forEach {
                 it.value.forEach { task ->
                     if(task.status == MultiTickTask.Status.STOPPED) {
