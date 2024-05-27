@@ -8,7 +8,7 @@ buildscript {
 }
 
 plugins {
-    id("fabric-loom").version("1.2-SNAPSHOT")
+    id("fabric-loom").version("1.6-SNAPSHOT")
     val kotlinVersion: String by System.getProperties()
     kotlin("jvm").version(kotlinVersion)
 }
@@ -26,12 +26,12 @@ dependencies {
     val fabric_kotlin_version: String by project
     modImplementation("net.fabricmc", "fabric-language-kotlin", fabric_kotlin_version)
 
-    compileOnly ("org.projectlombok:lombok:1.18.24")
-    annotationProcessor ("org.projectlombok:lombok:1.18.24")
+    compileOnly ("org.projectlombok:lombok:1.18.32")
+    annotationProcessor ("org.projectlombok:lombok:1.18.32")
 }
 
 tasks {
-    val javaVersion = JavaVersion.VERSION_17
+    val javaVersion = JavaVersion.VERSION_21
     withType<JavaCompile> {
         sourceCompatibility = javaVersion.toString()
         targetCompatibility = javaVersion.toString()

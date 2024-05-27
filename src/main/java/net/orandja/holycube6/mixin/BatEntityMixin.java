@@ -18,7 +18,6 @@ public abstract class BatEntityMixin extends AmbientEntity implements NerfedEnti
         super(entityType, world);
     }
 
-
     @Getter
     @Setter
     public short tickCooldown = 30;

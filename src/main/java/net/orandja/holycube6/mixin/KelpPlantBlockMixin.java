@@ -9,6 +9,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.World;
 import net.orandja.holycube6.utils.KelpPlantLogic;
+import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(KelpPlantBlock.class)
@@ -22,6 +23,7 @@ public abstract class KelpPlantBlockMixin extends AbstractPlantBlock implements 
         afterBreak(this, world, player, pos, state, blockEntity, stack);
     }
 
+    @NotNull
     public Block getKelpPlant() {
         return getPlant();
     }

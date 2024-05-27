@@ -14,7 +14,6 @@ import java.util.Set;
 
 @Mixin(Brain.class)
 public interface BrainAccessor<E extends LivingEntity>  {
-
     @Accessor
     Map<Integer, Map<Activity, Set<Task<? super E>>>>  getTasks();
 
@@ -29,5 +28,4 @@ public interface BrainAccessor<E extends LivingEntity>  {
 
     @Invoker("updateTasks")
     void _updateTasks(ServerWorld world, E entity);
-
 }

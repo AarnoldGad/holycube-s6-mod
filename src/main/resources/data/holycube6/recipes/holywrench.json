@@ -20,7 +20,12 @@
     }
   },
   "result": {
-    "item": "minecraft:debug_stick",
-    "count": 1
+    "id": "minecraft:debug_stick",
+    "count": 1,
+    "components":{
+      "custom_name": "[{'text':'MarliWrench','italic':true}]",
+      "lore": ["{'text':'La plus simple des façons de modifier vos blockStates.','italic':false}"],
+      "custom_data": {"holywrench":true}
+    }
   }
 }

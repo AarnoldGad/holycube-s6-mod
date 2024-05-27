@@ -5,30 +5,21 @@ import com.google.common.collect.ImmutableMap
 import net.minecraft.block.*
 import net.minecraft.block.enums.RailShape
 import net.minecraft.block.enums.SlabType
+import net.minecraft.component.DataComponentTypes
 import net.minecraft.entity.Entity
 import net.minecraft.entity.decoration.ItemFrameEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.ItemStack
 import net.minecraft.item.Items
-import net.minecraft.nbt.NbtCompound
-import net.minecraft.nbt.NbtList
-import net.minecraft.nbt.NbtString
-import net.minecraft.recipe.Ingredient
-import net.minecraft.recipe.ShapedRecipe
-import net.minecraft.recipe.ShapelessRecipe
-import net.minecraft.recipe.book.CraftingRecipeCategory
 import net.minecraft.registry.Registries
 import net.minecraft.server.network.ServerPlayerEntity
 import net.minecraft.server.world.ServerWorld
 import net.minecraft.state.property.Property
 import net.minecraft.util.ActionResult
 import net.minecraft.util.Hand
-import net.minecraft.util.Identifier
-import net.minecraft.util.collection.DefaultedList
 import net.minecraft.util.math.BlockPos
 import net.orandja.holycube6.accessor.ItemFrameEntityAccessor
 import net.orandja.holycube6.modules.WrenchBlockState.Companion.EMPTY_LIST
-import net.orandja.holycube6.recipes.CustomRemainedShapelessRecipe
 import net.orandja.holycube6.utils.sendHUD
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable
@@ -36,7 +27,9 @@ import java.util.*
 import java.util.stream.Collectors
 
 fun ItemStack.isWrench(): Boolean {
-    return isOf(Items.DEBUG_STICK) && nbt?.contains("holywrench") ?: false && nbt?.getBoolean("holywrench")!!
+    return isOf(Items.DEBUG_STICK) &&
+           components.get(DataComponentTypes.CUSTOM_DATA)?.contains("holywrench") ?: false &&
+           components.get(DataComponentTypes.CUSTOM_DATA)?.nbt?.getBoolean("holywrench")!!
 }
 
 private fun ItemStack.asWrench(callback: (stack: ItemStack) -> Unit) {
@@ -47,8 +40,8 @@ private fun ItemStack.asWrench(callback: (stack: ItemStack) -> Unit) {
 
 private fun ItemStack.getWrenchProperty(state: BlockState): Property<*>? {
     if (isWrench()) {
-        if (nbt?.contains("DebugProperty") == true) {
-            val propertyName = getSubNbt("DebugProperty")!!.getString(Registries.BLOCK.getId(state.block).toString())
+        if (components.get(DataComponentTypes.CUSTOM_DATA)?.contains("DebugProperty") == true) {
+            val propertyName = components.get(DataComponentTypes.CUSTOM_DATA)?.nbt?.getCompound("DebugProperty")!!.getString(Registries.BLOCK.getId(state.block).toString())
             if (!propertyName.equals("")) {
                 return state.block.stateManager.getProperty(propertyName)
             }
@@ -285,55 +278,6 @@ class DebugWrench {
             DetectorRailBlock.SHAPE
                 .ofValues(RailShape.NORTH_SOUTH, RailShape.ASCENDING_NORTH, RailShape.ASCENDING_SOUTH, RailShape.EAST_WEST, RailShape.ASCENDING_EAST, RailShape.ASCENDING_WEST)
                 .forBlocks(Blocks.DETECTOR_RAIL)
-        }
-
-        fun hackShapedRecipe(
-            identifier: Identifier,
-            group: String,
-            category: CraftingRecipeCategory,
-            width: Int,
-            height: Int,
-            input: DefaultedList<Ingredient>,
-            output: ItemStack,
-            showNotification: Boolean
-        ): ShapedRecipe {
-            if (identifier.namespace == "holycube6" && identifier.path == "holywrench") {
-                output.orCreateNbt.apply tag@{
-                    putBoolean("holywrench", true)
-                    put("display", NbtCompound().apply display@{
-                        this@display.put("Lore", NbtList().apply lore@{
-                            add(
-                                0,
-                                NbtString.of("[{\"text\":\"La plus simple des façons de modifier vos blockStates.\",\"italic\":false}]")
-                            )
-                        })
-                        this@display.putString("Name", "[{\"text\":\"MarliWrench\",\"italic\":true}]")
-                    })
-                }
-            }
-
-            return ShapedRecipe(identifier, group, category, width, height, input, output, showNotification)
-        }
-
-        fun hackShapelessRecipe(
-            identifier: Identifier,
-            group: String,
-            category: CraftingRecipeCategory,
-            output: ItemStack,
-            input: DefaultedList<Ingredient>
-        ): ShapelessRecipe {
-            if (identifier.namespace == "holycube6" && identifier.path == "deepslate_coal") {
-                return CustomRemainedShapelessRecipe(
-                    identifier,
-                    group,
-                    category,
-                    output,
-                    input,
-                    mapOf(Items.COAL_ORE to Items.STONE)
-                )
-            }
-
-            return ShapelessRecipe(identifier, group, category, output, input)
         }
 
         fun processBlockBreakingAction(

@@ -5,7 +5,6 @@ import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.ai.brain.Activity
 import net.minecraft.entity.ai.brain.Brain
 import net.minecraft.entity.ai.brain.task.MultiTickTask
-import net.minecraft.entity.ai.brain.task.Task
 import net.minecraft.entity.passive.VillagerEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.server.network.ServerPlayerEntity
