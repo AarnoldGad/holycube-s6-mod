@@ -8,7 +8,11 @@ I am maintaining this mod for my own minecraft server.
 
 ## Changelogs
 
-### - 27 May 2024 : Updated for **Minecraft 1.20.6**
+### v0.0.2+1.20.6 - 30 May 2024 : Minor update
+
+- Add crafting recipe for `minecraft:light`
+
+### v0.0.1+1.20.6 - 27 May 2024 : Updated for **Minecraft 1.20.6**
 
 - Update to Java Version 21
 - Update to gradle 8.7
@@ -19,7 +23,7 @@ I am maintaining this mod for my own minecraft server.
 - Delete loot boxes in merchants inventory
 - Update **LiteralTextContent** for **PlainTextContent.Literal** in sendHUD()
 
-### - 17 July 2024 : Updated for **Minecraft 1.20.1**
+### v0.0.1+1.20.1 - 17 July 2023 : Updated for **Minecraft 1.20.1**
 - Deactivated player heads in wandering traders' shops
 - Renamed DebugStick from "HolyWrench" to "MarliWrench" to fit my server
 
