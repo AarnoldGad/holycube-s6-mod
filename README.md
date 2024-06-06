@@ -8,7 +8,7 @@ I am maintaining this mod for my own minecraft server.
 
 ## Changelogs
 
-### v0.0.3+1.20.6 - 30 May 2024 : Minor update
+### v0.0.3+1.20.6 - 6 June 2024 : Minor update
 
 - Add creative mode bypass to change light level of `minecraft:light` on right click
 
