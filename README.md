@@ -8,6 +8,12 @@ I am maintaining this mod for my own minecraft server.
 
 ## Changelogs
 
+### v0.0.3+1.21 - 13 June 2024 : Updated for **Minecraft 1.21** (doih)
+
+- Update to Java 22, Kotlin 2.0.0 and Gradle 8.8
+- Rename data.holycube6.recipes to data.holycube6.recipe, otherwise custom recipes are not found
+- Update to Minecraft 1.21 (doih)
+
 ### v0.0.3+1.20.6 - 6 June 2024 : Minor update
 
 - Add creative mode bypass to change light level of `minecraft:light` on right click

@@ -31,7 +31,7 @@ dependencies {
 }
 
 tasks {
-    val javaVersion = JavaVersion.VERSION_21
+    val javaVersion = JavaVersion.VERSION_22
     withType<JavaCompile> {
         sourceCompatibility = javaVersion.toString()
         targetCompatibility = javaVersion.toString()

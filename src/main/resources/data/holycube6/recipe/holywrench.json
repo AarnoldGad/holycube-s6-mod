@@ -1,10 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " GN",
-    "RSG",
-    "SR "
-  ],
   "key": {
     "G": {
       "item": "minecraft:gold_ingot"
@@ -19,9 +14,14 @@
       "item": "minecraft:netherite_ingot"
     }
   },
+  "pattern": [
+    " GN",
+    "RSG",
+    "SR "
+  ],
   "result": {
-    "id": "minecraft:debug_stick",
     "count": 1,
+    "id": "minecraft:debug_stick",
     "components":{
       "custom_name": "[{'text':'MarliWrench','italic':true}]",
       "lore": ["{'text':'La plus simple des façons de modifier vos blockStates.','italic':false}"],
