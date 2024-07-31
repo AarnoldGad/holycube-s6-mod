@@ -8,6 +8,11 @@ I am maintaining this mod for my own minecraft server.
 
 ## Changelogs
 
+### v0.0.4+1.21 - 31 July 2024 : Hotfix - Missing blocks and block states
+
+- Reverse to Java 21, Kotlin 1.9.24
+- See [Issue #1](https://github.com/AarnoldGad/fabric-mod-s6/issues/1)
+
 ### v0.0.3+1.21 - 13 June 2024 : Updated for **Minecraft 1.21** (doih)
 
 - Update to Java 22, Kotlin 2.0.0 and Gradle 8.8
