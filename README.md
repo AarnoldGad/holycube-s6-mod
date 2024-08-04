@@ -8,6 +8,10 @@ I am maintaining this mod for my own minecraft server.
 
 ## Changelogs
 
+### v0.0.5+1.21 - 4 August 2024 : Hotfix
+
+- Add "IN_WALL" property for fence gates in debug stick
+
 ### v0.0.4+1.21 - 31 July 2024 : Hotfix - Missing blocks and block states
 
 - Reverse to Java 21, Kotlin 1.9.24

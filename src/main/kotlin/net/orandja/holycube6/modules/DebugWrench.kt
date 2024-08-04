@@ -187,6 +187,7 @@ class DebugWrench {
                     Blocks.CRIMSON_FENCE, Blocks.WARPED_FENCE, Blocks.NETHER_BRICK_FENCE,
                     Blocks.MANGROVE_FENCE, Blocks.CHERRY_FENCE, Blocks.BAMBOO_FENCE)
             FenceGateBlock.FACING
+                .with(FenceGateBlock.IN_WALL)
                 .forBlocks(
                     Blocks.OAK_FENCE_GATE, Blocks.SPRUCE_FENCE_GATE, Blocks.BIRCH_FENCE_GATE, Blocks.JUNGLE_FENCE_GATE, Blocks.ACACIA_FENCE_GATE, Blocks.DARK_OAK_FENCE_GATE,
                     Blocks.CRIMSON_FENCE_GATE, Blocks.WARPED_FENCE_GATE,
