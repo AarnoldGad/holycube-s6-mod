@@ -8,6 +8,17 @@ I am maintaining this mod for my own minecraft server.
 
 ## Changelogs
 
+### v0.0.6+1.21 - 4 August 2024 : Hotfix
+
+- Add "FACING"/"AXIS" property of a bunch of missing blocks
+  - Wood, stripped wood, and stripped log blocks, as well as Warped and Crimson wood
+  - Shulker boxes and barrels
+  - Basalt and Polished basalt
+  - Single chests, trapped chests and ender chests (double chests are WIP)
+  - Lectern, loom, grindstone, stone cutter, campfires and beehive/bee nest
+  - Carved pumpkins and Jack-o-lantern
+- Add Banners' orientation too
+
 ### v0.0.5+1.21 - 4 August 2024 : Hotfix
 
 - Add "IN_WALL" property for fence gates in debug stick
