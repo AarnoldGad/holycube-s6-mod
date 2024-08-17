@@ -3,6 +3,7 @@ package net.orandja.holycube6.modules
 import com.google.common.collect.ImmutableList
 import com.google.common.collect.ImmutableMap
 import net.minecraft.block.*
+import net.minecraft.block.enums.ChestType
 import net.minecraft.block.enums.RailShape
 import net.minecraft.block.enums.SlabType
 import net.minecraft.component.DataComponentTypes
@@ -176,9 +177,15 @@ class DebugWrench {
             PillarBlock.AXIS
                 .forBlocks(
                     Blocks.OAK_LOG, Blocks.SPRUCE_LOG, Blocks.BIRCH_LOG, Blocks.JUNGLE_LOG, Blocks.ACACIA_LOG, Blocks.DARK_OAK_LOG,
-                    Blocks.MANGROVE_LOG, Blocks.CHERRY_LOG, Blocks.BAMBOO_BLOCK,
+                    Blocks.MANGROVE_LOG, Blocks.CHERRY_LOG, Blocks.BAMBOO_BLOCK, Blocks.WARPED_STEM, Blocks.CRIMSON_STEM,
                     Blocks.STRIPPED_OAK_LOG, Blocks.STRIPPED_SPRUCE_LOG, Blocks.STRIPPED_BIRCH_LOG, Blocks.STRIPPED_JUNGLE_LOG, Blocks.STRIPPED_ACACIA_LOG, Blocks.STRIPPED_DARK_OAK_LOG,
-                    Blocks.STRIPPED_MANGROVE_LOG, Blocks.STRIPPED_CHERRY_LOG, Blocks.STRIPPED_BAMBOO_BLOCK,
+                    Blocks.STRIPPED_MANGROVE_LOG, Blocks.STRIPPED_CHERRY_LOG, Blocks.STRIPPED_BAMBOO_BLOCK, Blocks.STRIPPED_WARPED_STEM, Blocks.STRIPPED_CRIMSON_STEM,
+                    Blocks.OAK_WOOD, Blocks.SPRUCE_WOOD, Blocks.BIRCH_WOOD, Blocks.JUNGLE_WOOD, Blocks.ACACIA_WOOD, Blocks.DARK_OAK_WOOD,
+                    Blocks.MANGROVE_WOOD, Blocks.CHERRY_WOOD, Blocks.WARPED_HYPHAE, Blocks.CRIMSON_HYPHAE,
+                    Blocks.STRIPPED_OAK_WOOD, Blocks.STRIPPED_SPRUCE_WOOD, Blocks.STRIPPED_BIRCH_WOOD, Blocks.STRIPPED_JUNGLE_WOOD, Blocks.STRIPPED_ACACIA_WOOD, Blocks.STRIPPED_DARK_OAK_WOOD,
+                    Blocks.STRIPPED_MANGROVE_WOOD, Blocks.STRIPPED_CHERRY_WOOD, Blocks.STRIPPED_BAMBOO_BLOCK, Blocks.STRIPPED_WARPED_HYPHAE, Blocks.STRIPPED_CRIMSON_HYPHAE,
+                    Blocks.MUDDY_MANGROVE_ROOTS, Blocks.BASALT, Blocks.POLISHED_BASALT, Blocks.BONE_BLOCK,
+                    Blocks.OCHRE_FROGLIGHT, Blocks.VERDANT_FROGLIGHT, Blocks.PEARLESCENT_FROGLIGHT,
                     Blocks.QUARTZ_PILLAR, Blocks.PURPUR_PILLAR)
             FenceBlock.NORTH
                 .with(FenceBlock.EAST, FenceBlock.WEST, FenceBlock.SOUTH)
@@ -240,6 +247,26 @@ class DebugWrench {
                 .forBlocks(Blocks.DISPENSER)
             ObserverBlock.FACING
                 .forBlocks(Blocks.OBSERVER)
+            ShulkerBoxBlock.FACING
+                .forBlocks(
+                    Blocks.SHULKER_BOX,
+                    Blocks.WHITE_SHULKER_BOX, Blocks.LIGHT_GRAY_SHULKER_BOX, Blocks.GRAY_SHULKER_BOX, Blocks.BLACK_SHULKER_BOX,
+                    Blocks.RED_SHULKER_BOX, Blocks.GREEN_SHULKER_BOX, Blocks.BLUE_SHULKER_BOX,
+                    Blocks.MAGENTA_SHULKER_BOX, Blocks.CYAN_SHULKER_BOX, Blocks.YELLOW_SHULKER_BOX,
+                    Blocks.LIGHT_BLUE_SHULKER_BOX, Blocks.LIME_SHULKER_BOX,
+                    Blocks.PINK_SHULKER_BOX, Blocks.PURPLE_SHULKER_BOX,
+                    Blocks.ORANGE_SHULKER_BOX, Blocks.BROWN_SHULKER_BOX)
+            ChestBlock.FACING
+                .forBlocks(Blocks.CHEST) {state, _ -> state.get(ChestBlock.CHEST_TYPE) != ChestType.LEFT && state.get(ChestBlock.CHEST_TYPE) != ChestType.RIGHT}
+            EnderChestBlock.FACING
+                .forBlocks(Blocks.ENDER_CHEST)
+            TrappedChestBlock.FACING
+                .forBlocks(Blocks.TRAPPED_CHEST) {state, _ -> state.get(TrappedChestBlock.CHEST_TYPE) != ChestType.LEFT && state.get(TrappedChestBlock.CHEST_TYPE) != ChestType.RIGHT}
+            LecternBlock.FACING
+                .forBlocks(Blocks.LECTERN)
+            BarrelBlock.FACING
+                .with(BarrelBlock.OPEN)
+                .forBlocks(Blocks.BARREL)
             StairsBlock.FACING
                 .with(StairsBlock.HALF, StairsBlock.SHAPE)
                 .forBlocks(
@@ -296,6 +323,12 @@ class DebugWrench {
                 .forBlocks(Blocks.DETECTOR_RAIL)
             FurnaceBlock.LIT
                 .forBlocks(Blocks.FURNACE, Blocks.BLAST_FURNACE, Blocks.SMOKER)
+            LoomBlock.FACING
+                .forBlocks(Blocks.LOOM)
+            GrindstoneBlock.FACING
+                .forBlocks(Blocks.GRINDSTONE)
+            StonecutterBlock.FACING
+                .forBlocks(Blocks.STONECUTTER)
             BulbBlock.LIT
                 .forBlocks(
                     Blocks.COPPER_BULB, Blocks.EXPOSED_COPPER_BULB, Blocks.WEATHERED_COPPER_BULB, Blocks.OXIDIZED_COPPER_BULB,
@@ -311,6 +344,23 @@ class DebugWrench {
                     Blocks.OAK_HANGING_SIGN, Blocks.SPRUCE_HANGING_SIGN, Blocks.BIRCH_HANGING_SIGN, Blocks.JUNGLE_HANGING_SIGN, Blocks.ACACIA_HANGING_SIGN, Blocks.DARK_OAK_HANGING_SIGN,
                     Blocks.CRIMSON_HANGING_SIGN, Blocks.WARPED_HANGING_SIGN,
                     Blocks.MANGROVE_HANGING_SIGN, Blocks.CHERRY_HANGING_SIGN, Blocks.BAMBOO_HANGING_SIGN)
+            BannerBlock.ROTATION
+                .forBlocks(
+                    Blocks.WHITE_BANNER, Blocks.LIGHT_GRAY_BANNER, Blocks.GRAY_BANNER, Blocks.BLACK_BANNER,
+                    Blocks.RED_BANNER, Blocks.GREEN_BANNER, Blocks.BLUE_BANNER,
+                    Blocks.MAGENTA_BANNER, Blocks.CYAN_BANNER, Blocks.YELLOW_BANNER,
+                    Blocks.LIGHT_BLUE_BANNER, Blocks.LIME_BANNER,
+                    Blocks.PINK_BANNER, Blocks.PURPLE_BANNER,
+                    Blocks.ORANGE_BANNER, Blocks.BROWN_BANNER)
+            WearableCarvedPumpkinBlock.FACING
+                .forBlocks(Blocks.CARVED_PUMPKIN)
+            CarvedPumpkinBlock.FACING
+                .forBlocks(Blocks.JACK_O_LANTERN)
+            BeehiveBlock.FACING
+                .forBlocks(Blocks.BEE_NEST, Blocks.BEEHIVE)
+            CampfireBlock.FACING
+                .with(CampfireBlock.LIT)
+                .forBlocks(Blocks.CAMPFIRE, Blocks.SOUL_CAMPFIRE)
             CandleBlock.LIT
                 .forBlocks(
                     Blocks.CANDLE,
@@ -323,6 +373,7 @@ class DebugWrench {
                     Blocks.WHITE_CANDLE_CAKE, Blocks.ORANGE_CANDLE_CAKE, Blocks.MAGENTA_CANDLE_CAKE, Blocks.LIGHT_BLUE_CANDLE_CAKE, Blocks.YELLOW_CANDLE_CAKE,
                     Blocks.LIME_CANDLE_CAKE, Blocks.PINK_CANDLE_CAKE, Blocks.GRAY_CANDLE_CAKE, Blocks.LIGHT_GRAY_CANDLE_CAKE, Blocks.CYAN_CANDLE_CAKE, Blocks.PURPLE_CANDLE_CAKE,
                     Blocks.BLUE_CANDLE_CAKE, Blocks.BROWN_CANDLE_CAKE, Blocks.GREEN_CANDLE_CAKE, Blocks.RED_CANDLE_CAKE, Blocks.BLACK_CANDLE_CAKE)
+            
         }
 
         fun processBlockBreakingAction(
