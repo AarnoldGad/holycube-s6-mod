@@ -1,11 +1,11 @@
 {
     "schemaVersion": 1,
     "id": "holycube6",
-    "version": "0.0.4",
+    "version": "0.0.7",
     "name": "Holycube6",
     "description": "Mod Officiel de la Saison 6 de Holycube (Marlicraft Modified)",
     "authors": [
-        "Olivier \"ShoukaSeikyo\" Martinez"
+        "Olivier \"ShoukaSeikyo\" Martinez", "Gaétan \"Gad\" Jalin"
     ],
     "license": "CC BY-NC-SA",
     "icon": "assets/holycube6/icon.png",

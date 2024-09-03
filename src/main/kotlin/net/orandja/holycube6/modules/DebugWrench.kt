@@ -361,6 +361,8 @@ class DebugWrench {
             CampfireBlock.FACING
                 .with(CampfireBlock.LIT)
                 .forBlocks(Blocks.CAMPFIRE, Blocks.SOUL_CAMPFIRE)
+            PointedDripstoneBlock.THICKNESS
+                .forBlocks(Blocks.POINTED_DRIPSTONE)
             CandleBlock.LIT
                 .forBlocks(
                     Blocks.CANDLE,
