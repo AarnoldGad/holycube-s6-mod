@@ -19,6 +19,7 @@ import net.minecraft.state.property.Property
 import net.minecraft.util.ActionResult
 import net.minecraft.util.Hand
 import net.minecraft.util.math.BlockPos
+import net.orandja.holycube6.accessor.DecoratedPotBlockAccessor
 import net.orandja.holycube6.accessor.ItemFrameEntityAccessor
 import net.orandja.holycube6.modules.WrenchBlockState.Companion.EMPTY_LIST
 import net.orandja.holycube6.utils.sendHUD
@@ -363,6 +364,8 @@ class DebugWrench {
                 .forBlocks(Blocks.CAMPFIRE, Blocks.SOUL_CAMPFIRE)
             PointedDripstoneBlock.THICKNESS
                 .forBlocks(Blocks.POINTED_DRIPSTONE)
+            DecoratedPotBlockAccessor.getFacing()
+                .forBlocks(Blocks.DECORATED_POT)
             CandleBlock.LIT
                 .forBlocks(
                     Blocks.CANDLE,

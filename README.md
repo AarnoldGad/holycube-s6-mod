@@ -11,6 +11,7 @@ I am maintaining this mod for my own minecraft server.
 ### v0.0.7+1.21 - 3 September 2024 : Hotfix
 
 - Add pointed dripstone to debug stick
+- Also add decorated pot's facing to debug stick
 
 ### v0.0.6+1.21 - 4 August 2024 : Hotfix
 
