@@ -22,6 +22,7 @@ import net.minecraft.util.math.BlockPos
 import net.orandja.holycube6.accessor.CrafterBlockAccessor
 import net.orandja.holycube6.accessor.DecoratedPotBlockAccessor
 import net.orandja.holycube6.accessor.ItemFrameEntityAccessor
+import net.orandja.holycube6.accessor.PaleMossAccessor
 import net.orandja.holycube6.modules.WrenchBlockState.Companion.EMPTY_LIST
 import net.orandja.holycube6.utils.sendHUD
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo
@@ -385,7 +386,11 @@ class DebugWrench {
                 .forBlocks(
                     Blocks.CRAFTER
                 )
-            
+            PaleMossAccessor.getNorth()
+                .with(PaleMossAccessor.getEast(), PaleMossAccessor.getWest(), PaleMossAccessor.getSouth())
+                .forBlocks(
+                    Blocks.PALE_MOSS_CARPET
+                )
         }
 
         fun processBlockBreakingAction(

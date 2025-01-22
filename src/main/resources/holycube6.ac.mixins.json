@@ -6,7 +6,8 @@
     "BrainAccessor",
     "ItemFrameEntityAccessor",
     "DecoratedPotBlockAccessor",
-    "CrafterBlockAccessor"
+    "CrafterBlockAccessor",
+    "PaleMossAccessor"
   ],
   "client": [
   ],

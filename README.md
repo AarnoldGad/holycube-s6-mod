@@ -8,6 +8,10 @@ I am maintaining this mod for my own minecraft server.
 
 ## Changelogs
 
+### v0.0.9+1.21.4 - 22 Janvier 2025 : Hotfix
+
+- Add pale moss carper to debug stick
+
 ### v0.0.8+1.21.4 - 22 Janvier 2025 : Updated for **Minecraft 1.21.4**
 
 - Add crafter block to debug stick
