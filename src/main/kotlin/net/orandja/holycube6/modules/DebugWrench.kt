@@ -19,6 +19,7 @@ import net.minecraft.state.property.Property
 import net.minecraft.util.ActionResult
 import net.minecraft.util.Hand
 import net.minecraft.util.math.BlockPos
+import net.orandja.holycube6.accessor.CrafterBlockAccessor
 import net.orandja.holycube6.accessor.DecoratedPotBlockAccessor
 import net.orandja.holycube6.accessor.ItemFrameEntityAccessor
 import net.orandja.holycube6.modules.WrenchBlockState.Companion.EMPTY_LIST
@@ -160,7 +161,7 @@ class DebugWrench {
                     DoorBlock.OPEN,
                     DoorBlock.HINGE)
                 .forBlocks(
-                    Blocks.OAK_DOOR, Blocks.SPRUCE_DOOR, Blocks.BIRCH_DOOR, Blocks.JUNGLE_DOOR, Blocks.ACACIA_DOOR, Blocks.DARK_OAK_DOOR,
+                    Blocks.OAK_DOOR, Blocks.SPRUCE_DOOR, Blocks.BIRCH_DOOR, Blocks.JUNGLE_DOOR, Blocks.ACACIA_DOOR, Blocks.DARK_OAK_DOOR,Blocks.PALE_OAK_DOOR,
                     Blocks.IRON_DOOR,
                     Blocks.CRIMSON_DOOR, Blocks.WARPED_DOOR,
                     Blocks.MANGROVE_DOOR, Blocks.CHERRY_DOOR, Blocks.BAMBOO_DOOR,
@@ -169,7 +170,7 @@ class DebugWrench {
             TrapdoorBlock.FACING
                 .with(TrapdoorBlock.OPEN, TrapdoorBlock.HALF)
                 .forBlocks(
-                    Blocks.OAK_TRAPDOOR, Blocks.SPRUCE_TRAPDOOR, Blocks.BIRCH_TRAPDOOR, Blocks.JUNGLE_TRAPDOOR, Blocks.ACACIA_TRAPDOOR, Blocks.DARK_OAK_TRAPDOOR,
+                    Blocks.OAK_TRAPDOOR, Blocks.SPRUCE_TRAPDOOR, Blocks.BIRCH_TRAPDOOR, Blocks.JUNGLE_TRAPDOOR, Blocks.ACACIA_TRAPDOOR, Blocks.DARK_OAK_TRAPDOOR,Blocks.PALE_OAK_TRAPDOOR,
                     Blocks.IRON_TRAPDOOR,
                     Blocks.CRIMSON_TRAPDOOR, Blocks.WARPED_TRAPDOOR,
                     Blocks.MANGROVE_TRAPDOOR, Blocks.CHERRY_TRAPDOOR, Blocks.BAMBOO_TRAPDOOR,
@@ -177,27 +178,27 @@ class DebugWrench {
                     Blocks.WAXED_COPPER_TRAPDOOR, Blocks.WAXED_EXPOSED_COPPER_TRAPDOOR, Blocks.WAXED_WEATHERED_COPPER_TRAPDOOR, Blocks.WAXED_OXIDIZED_COPPER_TRAPDOOR)
             PillarBlock.AXIS
                 .forBlocks(
-                    Blocks.OAK_LOG, Blocks.SPRUCE_LOG, Blocks.BIRCH_LOG, Blocks.JUNGLE_LOG, Blocks.ACACIA_LOG, Blocks.DARK_OAK_LOG,
+                    Blocks.OAK_LOG, Blocks.SPRUCE_LOG, Blocks.BIRCH_LOG, Blocks.JUNGLE_LOG, Blocks.ACACIA_LOG, Blocks.DARK_OAK_LOG,Blocks.PALE_OAK_LOG,
                     Blocks.MANGROVE_LOG, Blocks.CHERRY_LOG, Blocks.BAMBOO_BLOCK, Blocks.WARPED_STEM, Blocks.CRIMSON_STEM,
                     Blocks.STRIPPED_OAK_LOG, Blocks.STRIPPED_SPRUCE_LOG, Blocks.STRIPPED_BIRCH_LOG, Blocks.STRIPPED_JUNGLE_LOG, Blocks.STRIPPED_ACACIA_LOG, Blocks.STRIPPED_DARK_OAK_LOG,
                     Blocks.STRIPPED_MANGROVE_LOG, Blocks.STRIPPED_CHERRY_LOG, Blocks.STRIPPED_BAMBOO_BLOCK, Blocks.STRIPPED_WARPED_STEM, Blocks.STRIPPED_CRIMSON_STEM,
-                    Blocks.OAK_WOOD, Blocks.SPRUCE_WOOD, Blocks.BIRCH_WOOD, Blocks.JUNGLE_WOOD, Blocks.ACACIA_WOOD, Blocks.DARK_OAK_WOOD,
+                    Blocks.OAK_WOOD, Blocks.SPRUCE_WOOD, Blocks.BIRCH_WOOD, Blocks.JUNGLE_WOOD, Blocks.ACACIA_WOOD, Blocks.DARK_OAK_WOOD,Blocks.PALE_OAK_WOOD,
                     Blocks.MANGROVE_WOOD, Blocks.CHERRY_WOOD, Blocks.WARPED_HYPHAE, Blocks.CRIMSON_HYPHAE,
-                    Blocks.STRIPPED_OAK_WOOD, Blocks.STRIPPED_SPRUCE_WOOD, Blocks.STRIPPED_BIRCH_WOOD, Blocks.STRIPPED_JUNGLE_WOOD, Blocks.STRIPPED_ACACIA_WOOD, Blocks.STRIPPED_DARK_OAK_WOOD,
-                    Blocks.STRIPPED_MANGROVE_WOOD, Blocks.STRIPPED_CHERRY_WOOD, Blocks.STRIPPED_BAMBOO_BLOCK, Blocks.STRIPPED_WARPED_HYPHAE, Blocks.STRIPPED_CRIMSON_HYPHAE,
+                    Blocks.STRIPPED_OAK_WOOD, Blocks.STRIPPED_SPRUCE_WOOD, Blocks.STRIPPED_BIRCH_WOOD, Blocks.STRIPPED_JUNGLE_WOOD, Blocks.STRIPPED_ACACIA_WOOD, Blocks.STRIPPED_DARK_OAK_WOOD,Blocks.STRIPPED_PALE_OAK_WOOD,
+                    Blocks.STRIPPED_MANGROVE_WOOD, Blocks.STRIPPED_CHERRY_WOOD, Blocks.STRIPPED_BAMBOO_BLOCK, Blocks.STRIPPED_WARPED_HYPHAE, Blocks.STRIPPED_CRIMSON_HYPHAE,Blocks.STRIPPED_PALE_OAK_LOG,
                     Blocks.MUDDY_MANGROVE_ROOTS, Blocks.BASALT, Blocks.POLISHED_BASALT, Blocks.BONE_BLOCK,
                     Blocks.OCHRE_FROGLIGHT, Blocks.VERDANT_FROGLIGHT, Blocks.PEARLESCENT_FROGLIGHT,
                     Blocks.QUARTZ_PILLAR, Blocks.PURPUR_PILLAR)
             FenceBlock.NORTH
                 .with(FenceBlock.EAST, FenceBlock.WEST, FenceBlock.SOUTH)
                 .forBlocks(
-                    Blocks.OAK_FENCE, Blocks.SPRUCE_FENCE, Blocks.BIRCH_FENCE, Blocks.JUNGLE_FENCE, Blocks.ACACIA_FENCE, Blocks.DARK_OAK_FENCE,
+                    Blocks.OAK_FENCE, Blocks.SPRUCE_FENCE, Blocks.BIRCH_FENCE, Blocks.JUNGLE_FENCE, Blocks.ACACIA_FENCE, Blocks.DARK_OAK_FENCE,Blocks.PALE_OAK_FENCE,
                     Blocks.CRIMSON_FENCE, Blocks.WARPED_FENCE, Blocks.NETHER_BRICK_FENCE,
                     Blocks.MANGROVE_FENCE, Blocks.CHERRY_FENCE, Blocks.BAMBOO_FENCE)
             FenceGateBlock.FACING
                 .with(FenceGateBlock.IN_WALL)
                 .forBlocks(
-                    Blocks.OAK_FENCE_GATE, Blocks.SPRUCE_FENCE_GATE, Blocks.BIRCH_FENCE_GATE, Blocks.JUNGLE_FENCE_GATE, Blocks.ACACIA_FENCE_GATE, Blocks.DARK_OAK_FENCE_GATE,
+                    Blocks.OAK_FENCE_GATE, Blocks.SPRUCE_FENCE_GATE, Blocks.BIRCH_FENCE_GATE, Blocks.JUNGLE_FENCE_GATE, Blocks.ACACIA_FENCE_GATE, Blocks.DARK_OAK_FENCE_GATE,Blocks.PALE_OAK_FENCE_GATE,
                     Blocks.CRIMSON_FENCE_GATE, Blocks.WARPED_FENCE_GATE,
                     Blocks.MANGROVE_FENCE_GATE, Blocks.CHERRY_FENCE_GATE, Blocks.BAMBOO_FENCE_GATE)
             PaneBlock.NORTH
@@ -221,6 +222,7 @@ class DebugWrench {
                     Blocks.NETHER_BRICK_WALL, Blocks.RED_NETHER_BRICK_WALL,
                     Blocks.BLACKSTONE_WALL, Blocks.POLISHED_BLACKSTONE_WALL, Blocks.POLISHED_BLACKSTONE_BRICK_WALL,
                     Blocks.COBBLED_DEEPSLATE_WALL, Blocks.DEEPSLATE_BRICK_WALL, Blocks.DEEPSLATE_TILE_WALL, Blocks.POLISHED_DEEPSLATE_WALL,
+                    Blocks.RESIN_BRICK_WALL,
                     Blocks.MUD_BRICK_WALL, Blocks.TUFF_WALL, Blocks.TUFF_BRICK_WALL, Blocks.POLISHED_TUFF_WALL)
             SkullBlock.ROTATION
                 .forBlocks(Blocks.SKELETON_SKULL, Blocks.WITHER_SKELETON_SKULL, Blocks.PLAYER_HEAD, Blocks.ZOMBIE_HEAD, Blocks.CREEPER_HEAD, Blocks.DRAGON_HEAD)
@@ -271,8 +273,8 @@ class DebugWrench {
             StairsBlock.FACING
                 .with(StairsBlock.HALF, StairsBlock.SHAPE)
                 .forBlocks(
-                    Blocks.OAK_STAIRS, Blocks.SPRUCE_STAIRS, Blocks.BIRCH_STAIRS, Blocks.JUNGLE_STAIRS, Blocks.ACACIA_STAIRS, Blocks.DARK_OAK_STAIRS,
-                    Blocks.MANGROVE_STAIRS, Blocks.CHERRY_STAIRS, Blocks.BAMBOO_STAIRS, Blocks.BAMBOO_MOSAIC_STAIRS,
+                    Blocks.OAK_STAIRS, Blocks.SPRUCE_STAIRS, Blocks.BIRCH_STAIRS, Blocks.JUNGLE_STAIRS, Blocks.ACACIA_STAIRS, Blocks.DARK_OAK_STAIRS,Blocks.RESIN_BRICK_STAIRS,
+                    Blocks.MANGROVE_STAIRS, Blocks.CHERRY_STAIRS, Blocks.BAMBOO_STAIRS, Blocks.BAMBOO_MOSAIC_STAIRS,Blocks.PALE_OAK_STAIRS,
                     Blocks.CRIMSON_STAIRS, Blocks.WARPED_STAIRS,
                     Blocks.STONE_STAIRS, Blocks.MOSSY_STONE_BRICK_STAIRS, Blocks.COBBLESTONE_STAIRS, Blocks.MOSSY_COBBLESTONE_STAIRS, Blocks.STONE_BRICK_STAIRS,
                     Blocks.GRANITE_STAIRS, Blocks.DIORITE_STAIRS, Blocks.ANDESITE_STAIRS,
@@ -290,7 +292,7 @@ class DebugWrench {
             SlabBlock.TYPE
                 .ofValues(SlabType.BOTTOM, SlabType.TOP)
                 .forBlocks(
-                    Blocks.OAK_SLAB, Blocks.SPRUCE_SLAB, Blocks.BIRCH_SLAB, Blocks.JUNGLE_SLAB, Blocks.ACACIA_SLAB, Blocks.DARK_OAK_SLAB,
+                    Blocks.OAK_SLAB, Blocks.SPRUCE_SLAB, Blocks.BIRCH_SLAB, Blocks.JUNGLE_SLAB, Blocks.ACACIA_SLAB, Blocks.DARK_OAK_SLAB,Blocks.PALE_OAK_SLAB,Blocks.RESIN_BRICK_SLAB,
                     Blocks.MANGROVE_SLAB, Blocks.CHERRY_SLAB, Blocks.BAMBOO_SLAB, Blocks.BAMBOO_MOSAIC_SLAB,
                     Blocks.CRIMSON_SLAB, Blocks.WARPED_SLAB, Blocks.PETRIFIED_OAK_SLAB,
                     Blocks.STONE_SLAB, Blocks.SMOOTH_STONE_SLAB, Blocks.COBBLESTONE_SLAB, Blocks.MOSSY_COBBLESTONE_SLAB, Blocks.STONE_BRICK_SLAB, Blocks.MOSSY_STONE_BRICK_SLAB,
@@ -336,14 +338,14 @@ class DebugWrench {
                     Blocks.WAXED_COPPER_BULB, Blocks.WAXED_EXPOSED_COPPER_BULB, Blocks.WAXED_WEATHERED_COPPER_BULB, Blocks.WAXED_OXIDIZED_COPPER_BULB)
             SignBlock.ROTATION
                 .forBlocks(
-                    Blocks.OAK_SIGN, Blocks.SPRUCE_SIGN, Blocks.BIRCH_SIGN, Blocks.JUNGLE_SIGN, Blocks.ACACIA_SIGN, Blocks.DARK_OAK_SIGN,
+                    Blocks.OAK_SIGN, Blocks.SPRUCE_SIGN, Blocks.BIRCH_SIGN, Blocks.JUNGLE_SIGN, Blocks.ACACIA_SIGN, Blocks.DARK_OAK_SIGN,Blocks.PALE_OAK_SIGN,
                     Blocks.CRIMSON_SIGN, Blocks.WARPED_SIGN,
                     Blocks.MANGROVE_SIGN, Blocks.CHERRY_SIGN, Blocks.BAMBOO_SIGN)
             HangingSignBlock.ATTACHED
                 .with(HangingSignBlock.ROTATION)
                 .forBlocks(
                     Blocks.OAK_HANGING_SIGN, Blocks.SPRUCE_HANGING_SIGN, Blocks.BIRCH_HANGING_SIGN, Blocks.JUNGLE_HANGING_SIGN, Blocks.ACACIA_HANGING_SIGN, Blocks.DARK_OAK_HANGING_SIGN,
-                    Blocks.CRIMSON_HANGING_SIGN, Blocks.WARPED_HANGING_SIGN,
+                    Blocks.CRIMSON_HANGING_SIGN, Blocks.WARPED_HANGING_SIGN,Blocks.PALE_OAK_HANGING_SIGN,
                     Blocks.MANGROVE_HANGING_SIGN, Blocks.CHERRY_HANGING_SIGN, Blocks.BAMBOO_HANGING_SIGN)
             BannerBlock.ROTATION
                 .forBlocks(
@@ -353,7 +355,7 @@ class DebugWrench {
                     Blocks.LIGHT_BLUE_BANNER, Blocks.LIME_BANNER,
                     Blocks.PINK_BANNER, Blocks.PURPLE_BANNER,
                     Blocks.ORANGE_BANNER, Blocks.BROWN_BANNER)
-            WearableCarvedPumpkinBlock.FACING
+            CarvedPumpkinBlock.FACING
                 .forBlocks(Blocks.CARVED_PUMPKIN)
             CarvedPumpkinBlock.FACING
                 .forBlocks(Blocks.JACK_O_LANTERN)
@@ -378,6 +380,11 @@ class DebugWrench {
                     Blocks.WHITE_CANDLE_CAKE, Blocks.ORANGE_CANDLE_CAKE, Blocks.MAGENTA_CANDLE_CAKE, Blocks.LIGHT_BLUE_CANDLE_CAKE, Blocks.YELLOW_CANDLE_CAKE,
                     Blocks.LIME_CANDLE_CAKE, Blocks.PINK_CANDLE_CAKE, Blocks.GRAY_CANDLE_CAKE, Blocks.LIGHT_GRAY_CANDLE_CAKE, Blocks.CYAN_CANDLE_CAKE, Blocks.PURPLE_CANDLE_CAKE,
                     Blocks.BLUE_CANDLE_CAKE, Blocks.BROWN_CANDLE_CAKE, Blocks.GREEN_CANDLE_CAKE, Blocks.RED_CANDLE_CAKE, Blocks.BLACK_CANDLE_CAKE)
+            CrafterBlockAccessor.getOrientation()
+                .with(CrafterBlock.CRAFTING)
+                .forBlocks(
+                    Blocks.CRAFTER
+                )
             
         }
 
@@ -408,9 +415,9 @@ class DebugWrench {
             return EMPTY_LIST
         }
 
-        fun <T> getValues(state: BlockState, property: Property<*>): Collection<T> {
+        fun <T> getValues(state: BlockState, property: Property<*>): List<T> {
             @Suppress("UNCHECKED_CAST")
-            return WrenchBlockState.getValues(state.block, property) as Collection<T>
+            return WrenchBlockState.getValues(state.block, property) as List<T>
         }
 
         fun interactItemFrame(

@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 import java.util.Collection;
+import java.util.List;
 
 @Mixin(net.minecraft.item.DebugStickItem.class)
 public abstract class DebugStickItemMixin extends net.minecraft.item.Item {
@@ -29,8 +30,8 @@ public abstract class DebugStickItemMixin extends net.minecraft.item.Item {
         return DebugWrench.Companion.getProperties(state, stack);
     }
 
-    @Redirect(method = "cycle", at = @At(value = "INVOKE", target = "Lnet/minecraft/state/property/Property;getValues()Ljava/util/Collection;"))
-    private static <T extends Comparable<T>> Collection<T> cycle(Property<T> property1, BlockState state, Property<T> property, boolean inverse) {
+    @Redirect(method = "cycle", at = @At(value = "INVOKE", target = "Lnet/minecraft/state/property/Property;getValues()Ljava/util/List;"))
+    private static <T extends Comparable<T>> List<T> cycle(Property<T> property1, BlockState state, Property<T> property, boolean inverse) {
         return DebugWrench.Companion.getValues(state, property);
     }
 }

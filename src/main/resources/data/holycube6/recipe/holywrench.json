@@ -1,31 +1,28 @@
 {
   "type": "minecraft:crafting_shaped",
-  "key": {
-    "G": {
-      "item": "minecraft:gold_ingot"
-    },
-    "R": {
-      "item": "minecraft:redstone"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    },
-    "N": {
-      "item": "minecraft:netherite_ingot"
-    }
-  },
+  "category": "building",
   "pattern": [
     " GN",
     "RSG",
     "SR "
   ],
+  "key": {
+    "G": "minecraft:gold_ingot",
+    "R": "minecraft:redstone",
+    "S": "stick",
+    "N": "minecraft:netherite_ingot"
+  },
   "result": {
-    "count": 1,
     "id": "minecraft:debug_stick",
-    "components":{
-      "custom_name": "[{'text':'MarliWrench','italic':true}]",
-      "lore": ["{'text':'La plus simple des façons de modifier vos blockStates.','italic':false}"],
-      "custom_data": {"holywrench":true}
-    }
+    "components": {
+      "custom_data": {
+        "holywrench": true
+      },
+      "minecraft:item_name": "{\"text\": \"MarliWrench\", \"italic\": true}",
+      "minecraft:lore": [
+        "{\"text\": \"La plus simple des façons de modifier vos blockStates.\", \"italic\": true}"
+      ]
+    },
+    "count": 1
   }
 }

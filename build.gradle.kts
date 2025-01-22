@@ -8,7 +8,7 @@ buildscript {
 }
 
 plugins {
-    id("fabric-loom").version("1.6-SNAPSHOT")
+    id("fabric-loom").version("1.9-SNAPSHOT")
     val kotlinVersion: String by System.getProperties()
     kotlin("jvm").version(kotlinVersion)
 }

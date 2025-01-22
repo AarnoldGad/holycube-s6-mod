@@ -8,6 +8,13 @@ I am maintaining this mod for my own minecraft server.
 
 ## Changelogs
 
+### v0.0.8+1.21.4 - 22 Janvier 2025 : Updated for **Minecraft 1.21.4**
+
+- Add crafter block to debug stick
+- Add Pale wood collection to debug stick
+- Add Resin collection
+- Change format recipe "MarliWrench"
+
 ### v0.0.7+1.21 - 3 September 2024 : Hotfix
 
 - Add pointed dripstone to debug stick
